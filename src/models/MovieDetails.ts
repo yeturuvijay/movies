@@ -1,4 +1,3 @@
-import { StringifyOptions } from "querystring";
 import Movie from "./Movie";
 
 interface Geners {
