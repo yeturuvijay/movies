@@ -5,10 +5,10 @@ interface Geners {
   name: string;
 }
 
-export default interface MovieDetails extends Movie {
-  genres: Geners[];
-  overview: string;
-  release_date: string;
-  status: string;
-  runtime: number;
-}
+// export default interface MovieDetails extends Movie {
+//   genres: Geners[];
+//   overview: string;
+//   release_date: string;
+//   status: string;
+//   runtime: number;
+// }

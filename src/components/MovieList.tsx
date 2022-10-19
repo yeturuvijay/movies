@@ -1,7 +1,19 @@
-import './MovieList.css'
+import Movie from "../models/Movie";
+import "./MovieList.css";
+import MovieListItem from "./MovieListItem";
 
-const MovieList = () => {
-  return <div className='MovieList'>MovieList works</div>
+interface Props {
+  movieList: Movie[];
 }
 
-export default MovieList
+const MovieList = ({ movieList }: Props) => {
+  return (
+    <ul className="MovieList">
+      {movieList.map((movie) => (
+        <MovieListItem movie={movie} key={movie.id} />
+      ))}
+    </ul>
+  );
+};
+
+export default MovieList;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import MovieDetails from "../models/MovieDetails";
+import Movie from "../models/Movie";
 import MultipleMovieResponse from "../models/MultipleMovieResponse";
 
 interface FilterParams {
@@ -59,7 +59,7 @@ export const getFilteredMovies = (
     .then((response) => response.data);
 };
 
-export const getMovieDetails = (id: number): Promise<MovieDetails> => {
+export const getMovieDetails = (id: number): Promise<Movie> => {
   return axios
     .get(`https://api.themoviedb.org/3/movie/${encodeURIComponent(id)}`, {
       params: {

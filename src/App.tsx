@@ -7,7 +7,8 @@ import {
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import Movie from "./components/Movie";
+import MovieDetails from "./components/MovieDetails";
+import Movie from "./components/MovieDetails";
 import Watchlist from "./components/Watchlist";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/movies/watchlist" element={<Watchlist />} />
-          <Route path="/movies/:id" element={<Movie />} />
+          <Route path="/movies/:id" element={<MovieDetails />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>

@@ -1,7 +1,14 @@
-import './Header.css'
+import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
-  return <div className='Header'>Header works</div>
-}
+  return (
+    <header className="Header">
+      <Link to="/">
+        <h1>Trending Movies</h1>
+      </Link>
+    </header>
+  );
+};
 
-export default Header
+export default Header;
