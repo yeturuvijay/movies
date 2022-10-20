@@ -1,5 +1,6 @@
 .MovieDetails {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 10px;
 }
@@ -9,4 +10,13 @@
 .MovieDetails .movie-description {
   padding: 10px;
   text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .MovieDetails {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
 }

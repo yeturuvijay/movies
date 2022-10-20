@@ -1,18 +1,38 @@
 .FilterMovieForm {
   margin: 0 15px;
+  width: 250px;
+  margin: 0 auto;
 }
-.FilterMovieForm .form-control label {
+
+.FilterMovieForm .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.FilterMovieForm label {
+  padding-right: 10px;
+}
+
+.FilterMovieForm button {
+  margin: 0 auto;
+}
+
+.FilterMovieForm .FilterMovieForm .form-control label {
   margin-right: 10px;
 }
 .FilterMovieForm .form-control input {
-  height: 25px;
+  height: 15px;
   border: 2px solid gray;
   padding: 2px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .FilterMovieForm .form-control select {
-  height: 33px;
+  height: 23px;
   border: 2px solid gray;
   padding: 2px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
