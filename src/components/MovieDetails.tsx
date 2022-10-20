@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import WatchlistContext from "../context/WatchlistContext";
 import Movie from "../models/Movie";
 import { getMovieDetails } from "../services/MovieService";
 import "./MovieDetails.css";
@@ -7,6 +8,8 @@ import "./MovieDetails.css";
 const MovieDetails = () => {
   const movieId: number | undefined = parseInt(useParams().id || "");
   const [movie, setMovie] = useState<Movie>();
+  const { inWatchlist, addToWatchlist, removeFromWatchlist } =
+    useContext(WatchlistContext);
 
   useEffect(() => {
     getMovieDetails(movieId).then((response) => {
@@ -29,6 +32,15 @@ const MovieDetails = () => {
           <p>Genre : {movie?.genres?.map((item) => `${item.name} `)}</p>
           <p>Runtime: {movie?.runtime}</p>
           <p>Release Date: {movie?.release_date}</p>
+          {inWatchlist(movie.id) ? (
+            <button onClick={() => removeFromWatchlist(movie.id)}>
+              Remove from Watchlist
+            </button>
+          ) : (
+            <button onClick={() => addToWatchlist(movie)}>
+              Add to Watchlist
+            </button>
+          )}
         </>
       ) : (
         <p>Movie details not found</p>
