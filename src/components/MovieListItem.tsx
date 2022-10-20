@@ -9,12 +9,20 @@ interface Props {
 
 const MovieListItem = ({ movie }: Props) => {
   return (
-    <li className="MovieListItem">
-      <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
-        <span>{movie.title || movie.original_name}</span>
-        <span> Rating : {movie.vote_average}</span>
-      </Link>
-    </li>
+    <>
+      {movie.poster_path && (
+        <li className="MovieListItem">
+          <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              alt={movie.title || movie.original_name}
+            />
+            {/* <h3>{movie.title || movie.original_name}</h3>
+            <p> Rating : {movie.vote_average}</p> */}
+          </Link>
+        </li>
+      )}
+    </>
   );
 };
 

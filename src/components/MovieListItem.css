@@ -1,0 +1,9 @@
+.MovieListItem img {
+  height: 175px;
+}
+
+@media screen and (min-width: 768px) {
+  .MovieListItem img {
+    height: 300px;
+  }
+}

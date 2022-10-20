@@ -1,3 +1,12 @@
+.MovieDetails {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
 .MovieDetails img {
   height: 250px;
+}
+.MovieDetails .movie-description {
+  padding: 10px;
+  text-align: left;
 }

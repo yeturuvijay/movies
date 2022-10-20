@@ -8,11 +8,17 @@ interface Props {
 
 const MovieList = ({ movieList }: Props) => {
   return (
-    <ul className="MovieList">
-      {movieList.map((movie) => (
-        <MovieListItem movie={movie} key={movie.id} />
-      ))}
-    </ul>
+    <>
+      {movieList.length > 0 ? (
+        <ul className="MovieList">
+          {movieList.map((movie) => (
+            <MovieListItem movie={movie} key={movie.id} />
+          ))}
+        </ul>
+      ) : (
+        <p>No movies. Please try again.</p>
+      )}
+    </>
   );
 };
 

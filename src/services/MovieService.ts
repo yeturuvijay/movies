@@ -1,18 +1,8 @@
 import axios from "axios";
 import Movie from "../models/Movie";
+import Geners from "../models/Geners";
 import MultipleMovieResponse from "../models/MultipleMovieResponse";
-
-interface FilterParams {
-  api_key: string;
-  language: string;
-  vote_average?: {
-    gte: number;
-  };
-  with_runtime?: {
-    lte: number;
-  };
-  with_genres?: string;
-}
+import GenersResponse from "../models/GenersResponse";
 
 const api_key: string = process.env.REACT_APP_MOVIE_KEY || "";
 
@@ -31,7 +21,7 @@ export const getFilteredMovies = (
   runtime?: number,
   rating?: number
 ): Promise<MultipleMovieResponse> => {
-  let filterParams: FilterParams = {
+  let filterParams: any = {
     api_key,
     language: "en-US",
   };
@@ -41,15 +31,11 @@ export const getFilteredMovies = (
   }
 
   if (runtime) {
-    filterParams.with_runtime = {
-      lte: runtime,
-    };
+    filterParams["with_runtime.lte"] = runtime;
   }
 
   if (rating) {
-    filterParams.vote_average = {
-      gte: rating,
-    };
+    filterParams["vote_average.gte"] = rating;
   }
 
   return axios
@@ -62,6 +48,16 @@ export const getFilteredMovies = (
 export const getMovieDetails = (id: number): Promise<Movie> => {
   return axios
     .get(`https://api.themoviedb.org/3/movie/${encodeURIComponent(id)}`, {
+      params: {
+        api_key,
+      },
+    })
+    .then((response) => response.data);
+};
+
+export const getGenresList = (): Promise<GenersResponse> => {
+  return axios
+    .get("https://api.themoviedb.org/3/genre/movie/list", {
       params: {
         api_key,
       },

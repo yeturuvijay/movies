@@ -20,27 +20,33 @@ const MovieDetails = () => {
     <div className="MovieDetails">
       {movie ? (
         <>
-          <h2>{movie?.title || movie?.original_name}</h2>
           <img
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={movie?.title || movie?.original_name}
           />
-          <p>{movie?.overview}</p>
-          <p>Rating : {movie?.vote_average}</p>
-          <p>Count : {movie?.vote_count}</p>
+          <div className="movie-description">
+            <h2>Title : {movie?.title || movie?.original_name}</h2>
 
-          <p>Genre : {movie?.genres?.map((item) => `${item.name} `)}</p>
-          <p>Runtime: {movie?.runtime}</p>
-          <p>Release Date: {movie?.release_date}</p>
-          {inWatchlist(movie.id) ? (
-            <button onClick={() => removeFromWatchlist(movie.id)}>
-              Remove from Watchlist
-            </button>
-          ) : (
-            <button onClick={() => addToWatchlist(movie)}>
-              Add to Watchlist
-            </button>
-          )}
+            <p>Overview: {movie?.overview}</p>
+            <p>
+              Rating :{" "}
+              {`${Math.round(movie?.vote_average * 10) / 10} (${
+                movie?.vote_count
+              })`}
+            </p>
+            <p>Genre : {movie?.genres?.map((item) => `${item.name} `)}</p>
+            <p>Runtime: {movie?.runtime}</p>
+            <p>Release Date: {movie?.release_date}</p>
+            {inWatchlist(movie.id) ? (
+              <button onClick={() => removeFromWatchlist(movie.id)}>
+                Remove from Watchlist
+              </button>
+            ) : (
+              <button onClick={() => addToWatchlist(movie)}>
+                Add to Watchlist
+              </button>
+            )}
+          </div>
         </>
       ) : (
         <p>Movie details not found</p>

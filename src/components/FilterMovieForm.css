@@ -1,0 +1,18 @@
+.FilterMovieForm {
+  margin: 0 15px;
+}
+.FilterMovieForm .form-control label {
+  margin-right: 10px;
+}
+.FilterMovieForm .form-control input {
+  height: 25px;
+  border: 2px solid gray;
+  padding: 2px;
+  border-radius: 10px;
+}
+.FilterMovieForm .form-control select {
+  height: 33px;
+  border: 2px solid gray;
+  padding: 2px;
+  border-radius: 10px;
+}

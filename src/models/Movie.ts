@@ -1,7 +1,4 @@
-interface Geners {
-  id: number;
-  name: string;
-}
+import Geners from "./Geners";
 
 export default interface Movie {
   id: number;
