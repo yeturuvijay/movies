@@ -17,8 +17,6 @@ const MovieListItem = ({ movie }: Props) => {
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               alt={movie.title || movie.original_name}
             />
-            {/* <h3>{movie.title || movie.original_name}</h3>
-            <p> Rating : {movie.vote_average}</p> */}
           </Link>
         </li>
       )}

@@ -12,4 +12,5 @@ export default interface Movie {
   release_date?: string;
   status?: string;
   runtime?: number;
+  _id?: string;
 }
