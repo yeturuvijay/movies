@@ -25,7 +25,7 @@ const MovieDetails = () => {
             alt={movie?.title || movie?.original_name}
           />
           <div className="movie-description">
-            <h2>Title : {movie?.title || movie?.original_name}</h2>
+            <h2>{movie?.title || movie?.original_name}</h2>
 
             <p>Overview: {movie?.overview}</p>
             <p>
