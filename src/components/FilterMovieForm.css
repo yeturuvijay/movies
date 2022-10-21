@@ -15,10 +15,17 @@
 
 .FilterMovieForm label {
   padding-right: 10px;
+  width: 70px;
+  text-align: left;
 }
 
 .FilterMovieForm button {
   margin: 0 auto;
+}
+
+.FilterMovieForm .form-control {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .FilterMovieForm .FilterMovieForm .form-control label {
